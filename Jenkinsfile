@@ -2,14 +2,14 @@ pipeline {
   agent any
 
   environment {
-    IMAGE_NAME = "ghcr.io/<github-username>/food-react-website"
+    IMAGE_NAME = "ghcr.io/vikasrajput0112/food-react-website"
     TAG = "${BUILD_NUMBER}"
   }
 
   stages {
     stage('Checkout') {
       steps {
-        git branch: 'main', url: 'https://github.com/<github-username>/food-react-website.git'
+        git branch: 'main', url: 'https://github.com/vikasrajput0112/food-react-website.git'
       }
     }
 
@@ -23,7 +23,7 @@ pipeline {
       steps {
         withCredentials([string(credentialsId: 'github-jenkins', variable: 'TOKEN')]) {
           sh """
-          echo $TOKEN | docker login ghcr.io -u <github-username> --password-stdin
+          echo $TOKEN | docker login ghcr.io -u vikasrajput0112 --password-stdin
           docker push $IMAGE_NAME:$TAG
           """
         }
