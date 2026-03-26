@@ -18,7 +18,7 @@ export default function Contact() {
 
         <div style={styles.section}>
           <h3>📞 Phone</h3>
-          <p>+91 98765 43210</p>
+          <p>+91 9988776655</p>
         </div>
 
         <div style={styles.section}>
