@@ -23,7 +23,7 @@ export default function Contact() {
 
         <div style={styles.section}>
           <h3>📧 Email</h3>
-          <p>support@foodreact.com</p>
+          <p>support-check@foodreact.com</p>
         </div>
       </div>
 
