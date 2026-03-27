@@ -21,7 +21,7 @@ pipeline {
 
     stage('Push Image') {
       steps {
-        withCredentials([string(credentialsId: 'github-jenkins', variable: 'TOKEN')]) {
+        withCredentials([string(credentialsId: 'ghcr-token123', variable: 'TOKEN')]) {
           sh """
           echo $TOKEN | docker login ghcr.io -u vikasrajput0112 --password-stdin
           docker push $IMAGE_NAME:$TAG
@@ -32,7 +32,7 @@ pipeline {
     }
     stage('Update GitOps Repo') {
   steps {
-    withCredentials([string(credentialsId: 'github-jenkins', variable: 'GITHUB_TOKEN')]) {
+    withCredentials([string(credentialsId: 'ghcr-token123', variable: 'GITHUB_TOKEN')]) {
       sh """
         rm -rf food-react-gitops
         git clone https://$GITHUB_TOKEN@github.com/vikasrajput0112/food-react-gitops.git
